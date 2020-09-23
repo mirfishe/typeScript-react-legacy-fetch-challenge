@@ -1,24 +1,12 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Location from './components/Location';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <p>Using typescript, create a class component and a functional component. The class component should reach out to the Geolocation API https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API to grab your coordinates. Then using those coordinates, reach out to the Open Weather API https://openweathermap.org/ and retrieve the weather information for your area.  Once you have the weather, it should be sent to the functional component to be displayed.</p>
+      <Location />
     </div>
   );
 }
