@@ -8,13 +8,13 @@ type testState = {
     // weatherWeather: string[],
     // weatherData: {},
     weatherData: any,
-    // name: string,
-    // currently: string,
-    // temperatureFahrenheit:  string,
-    // temperatureCelsius:  string,
-    // humidity:  string,
-    // pressure: string,
-    // windSpeed: string,
+    name: string,
+    currently: string,
+    temperatureFahrenheit:  string,
+    temperatureCelsius:  string,
+    humidity:  string,
+    pressure: string,
+    windSpeed: string,
     statusLocation: string,
     errWeather: string
 };
@@ -29,13 +29,13 @@ class Location extends Component<({}), testState> {
             // weatherMain: {},
             // weatherWeather: [],
             weatherData: {},
-            // name: "",
-            // currently: "",
-            // temperatureFahrenheit: "",
-            // temperatureCelsius: "",
-            // humidity: "",
-            // pressure: "",
-            // windSpeed: "",
+            name: "",
+            currently: "",
+            temperatureFahrenheit: "",
+            temperatureCelsius: "",
+            humidity: "",
+            pressure: "",
+            windSpeed: "",
             statusLocation: "",
             errWeather: ""
         };
@@ -87,13 +87,13 @@ class Location extends Component<({}), testState> {
                 // self.setState({weatherWeather: json.weather});
                 self.setState({statusLocation: ""});
                 self.setState({weatherData: json});
-                // self.setState({name: json.name});
-                // self.setState({currently: json.weather[0].main});
-                // self.setState({temperatureFahrenheit: Math.floor(((json.main.temp-273.15)*1.8)+32).toString()});
-                // self.setState({temperatureCelsius: Math.floor(json.main.temp-273.15).toString()});
-                // self.setState({humidity: json.main.humidity});
-                // self.setState({pressure: (json.main.pressure * 0.030).toPrecision(4)});
-                // self.setState({windSpeed: (json.wind.speed * 2.23694).toPrecision(2)});
+                self.setState({name: json.name});
+                self.setState({currently: json.weather[0].main});
+                self.setState({temperatureFahrenheit: Math.floor(((json.main.temp-273.15)*1.8)+32).toString()});
+                self.setState({temperatureCelsius: Math.floor(json.main.temp-273.15).toString()});
+                self.setState({humidity: json.main.humidity});
+                self.setState({pressure: (json.main.pressure * 0.030).toPrecision(4)});
+                self.setState({windSpeed: (json.wind.speed * 2.23694).toPrecision(2)});
             })
             // .then (test => {
             //     console.log('self.state.weatherMain', self.state.weatherMain);
@@ -126,7 +126,7 @@ class Location extends Component<({}), testState> {
             <div>
                 {this.state.errWeather !== "" ? this.state.errWeather : ""}
                 {this.state.statusLocation !== "" ? this.state.statusLocation : ""}
-                {this.state.weatherData.hasOwnProperty('weather')  ? <Weather /*weatherMain={this.state.weatherMain} weatherWeather={this.state.weatherWeather}*/ weatherData={this.state.weatherData} /*name={this.state.name} currently={this.state.currently} temperatureFahrenheit={this.state.temperatureFahrenheit} temperatureCelsius={this.state.temperatureCelsius} humidity={this.state.humidity} pressure={this.state.pressure} windSpeed={this.state.windSpeed}*/ /> : ""}
+                {this.state.weatherData.hasOwnProperty('weather')  ? <Weather /*weatherMain={this.state.weatherMain} weatherWeather={this.state.weatherWeather}*/ weatherData={this.state.weatherData} name={this.state.name} currently={this.state.currently} temperatureFahrenheit={this.state.temperatureFahrenheit} temperatureCelsius={this.state.temperatureCelsius} humidity={this.state.humidity} pressure={this.state.pressure} windSpeed={this.state.windSpeed} /> : ""}
             </div>
         );
     };
