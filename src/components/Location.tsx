@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 import Weather from "./Weather";
 
-type testState = {
+interface iState {
     latitude: number | undefined | null,
     longitude: number | undefined | null,
     // weatherMain: {},
     // weatherWeather: string[],
-    // weatherData: {},
-    weatherData: any,
+    weatherData: {},
+    // weatherData: any,
     name: string,
     currently: string,
     temperatureFahrenheit:  string,
@@ -19,7 +19,7 @@ type testState = {
     errWeather: string
 };
 
-class Location extends Component<({}), testState> {
+class Location extends Component<({}), iState> {
 
     constructor(props: {}) {
         super(props);

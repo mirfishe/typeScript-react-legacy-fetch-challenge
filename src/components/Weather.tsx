@@ -1,10 +1,10 @@
 import React, {FunctionComponent} from 'react';
 
-type AcceptedProps = {
+interface iProps {
     // weatherMain: {},
     // weatherWeather: string[],
-    // weatherData: {},
-    weatherData: any,
+    weatherData: {},
+    // weatherData: any,
     name: string,
     currently: string,
     temperatureFahrenheit: string,
@@ -14,7 +14,7 @@ type AcceptedProps = {
     windSpeed: string
 };
 
-const Weather: FunctionComponent <(AcceptedProps)> = props => {
+const Weather: FunctionComponent <(iProps)> = props => {
 
     // console.log('props.weatherMain', props.weatherMain);
     // console.log('props.weatherWeather', props.weatherWeather);
